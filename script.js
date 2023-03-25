@@ -1,3 +1,5 @@
+//Player's Pick
+
 let playerSelection = prompt("Rock, Paper, or Scissors?");
 
 let lowerCasedPlayerSelection =
@@ -6,17 +8,18 @@ let lowerCasedPlayerSelection =
 
 console.log("You chose " + lowerCasedPlayerSelection);
 
-/* //Player's Pick
-if (playerSelection === "Rock") {
-  return 0;r
-} else if (playerSelection === "Paper") {
-  return 1;
-} else if (playerSelection === "Scissors") {
-  return 2;
+let playerVar = lowerCasedPlayerSelection;
+if (lowerCasedPlayerSelection == "Rock") {
+  playerVar = 0;
+} else if (lowerCasedPlayerSelection == "Paper") {
+  playerVar = 1;
+} else if ((lowerCasedPlayerSelection == "Scissors", "Scissor")) {
+  playerVar = 2;
 } else {
-  console.log("Try Again");
+  console.log("Please provide valid Input");
 }
- */
+
+//End of Player's Pick
 
 //Computer's Pick
 
@@ -24,24 +27,43 @@ function getComputerChoice(max) {
   return Math.floor(Math.random() * max);
 }
 
-let newVar = "";
+let computerVar = "";
 
 let computerChoice = getComputerChoice(3);
-if (computerChoice == "0") {
-  newVar = "Rock";
-  console.log("Computer chose " + newVar);
-} else if (computerChoice == "1") {
-  newVar = "Paper";
-  console.log("Computer chose " + newVar);
-} else if (computerChoice == "2") {
-  newVar = "Scissors";
-  console.log("Computer chose " + newVar);
+if (computerChoice === 0) {
+  computerVar = "Rock";
+  console.log("Computer chose " + computerVar);
+} else if (computerChoice === 1) {
+  computerVar = "Paper";
+  console.log("Computer chose " + computerVar);
+} else if (computerChoice === 2) {
+  computerVar = "Scissors";
+  console.log("Computer chose " + computerVar);
 } else {
   console.log("Please provide valid Input");
 }
 
-/* function playRound(playerSelection, computerSelection) {}
+//End of Computer's Pick
 
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection)); */
+//Start Selection of Winner
+
+function playRound(playerVar, computerChoice) {
+  if (playerVar === computerChoice) {
+    return "It is a tie!";
+  } else if (playerVar === 0 && computerChoice === 2) {
+    return "You win!";
+  } else if (playerVar === 1 && computerChoice === 0) {
+    return "You win!";
+  } else if (playerVar === 2 && computerChoice === 1) {
+    return "You win!";
+  } else {
+    return "You lose!";
+  }
+}
+
+const playerVar2 = playerVar;
+const computerChoice2 = computerChoice;
+
+console.log(playRound(playerVar2, computerChoice2));
+
+//End of Selection of Winner
